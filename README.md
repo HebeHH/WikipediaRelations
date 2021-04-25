@@ -10,7 +10,7 @@ Clone the repo, or just download the `WikipediaRelations.ipynb` Jupyter notebook
 
 > Uses Python3. Dependencies: [graphviz](https://graphviz.readthedocs.io/en/stable/manual.html), [BeautifulSoup](https://pypi.org/project/beautifulsoup4/) and [palettable](https://jiffyclub.github.io/palettable/).
 
-### Running the code:
+**Basic usage:**
 ```python
 dot = wiki_relationship_diagraph("Ptolemy XI", "Ptolemy_XI_Alexander_II", count=200)
 ```
@@ -21,7 +21,7 @@ _Red dashed line is marriage. Gold arrow shows succession of a title. Black arro
 ![Ptolemy diagram](https://raw.githubusercontent.com/HebeHH/WikipediaRelations/main/Ptolemies.png)
 
 
-### Full function and with default paramaters:
+**Full function and with default paramaters:**
 ```python
 wiki_relationship_diagraph(basis_person_name, basis_person_link, count=150,
                                name="WikiRelations", trim=True, save=True, save_format=False)
