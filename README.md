@@ -4,7 +4,11 @@ Python script for finding quasi-incestuous relationships according to Wikipedia
 
 Basically: choose a person who's available on wikipedia. Then use this program to get a dot diagraph of their family relationships, and where they fall in any lines of succession for a title (eg, royal crown).
 
-Example:
+### Running the Code
+
+Clone the repo, or just download the `WikipediaRelations.ipynb` Jupyter notebook. Then you can either run your commands at the bottom, or import it into a new file.
+
+Running the code:
 ```python
 dot = wiki_relationship_diagraph("Ptolemy XI", "Ptolemy_XI_Alexander_II", count=200)
 ```
@@ -31,7 +35,42 @@ These paramaters are:
 - `save_format`: Format to save the graph as. `False` means it will use your computer's default value. Otherwise, give a format value as a string from this list of what's available: https://www.graphviz.org/doc/info/output.html
 
 
-Notes:
+### How it works
+
+**1.** _Scrape Wikipedia page_
+
+After getting the Wikipedia HTML for the given person, use BeautifulSoup to localize the `infobox` section. You're probably already familiar with this - see the one for Obama below.
+
+![Wikipedia infobox](http://thinking.is.ed.ac.uk/wiki-basics/wp-content/uploads/sites/19/2017/12/Obama-infobox.png)
+
+**2.** _Find relevant lines_
+
+Go through the infobox table and pull out all lines where the title matches one of the keywords. Eg: `Succeeded by`.
+
+**3.** _Add new people and relationships_
+
+For each relevant line, find any links in the value. This doesn't pay much attention to the actual text; it just looks for links (`<a>` tags) and gets the reference. These links represent a new `Person`, and are added to the queue. The relationship information is added to the current `Person` object; that they have _this relationship_ (from keyword) to _this person_ (from link).
+
+**4.** _Repeat_
+
+Go through the above steps for all the new related people who's links have been found. This isn't done infinitely, it's only done for `count` number of people.
+
+**5.** _Create graph_
+
+At this point there's a list of _People_ objects, each containing their own relationships. This is transformed into a nodelist/edgelist graph structure. 
+
+**6.** _Prune_
+
+Remove 'unimportant' people from the graph, ie: people on the fringes without connections. This prunes all people with only one connection, and then recurses, until only highly-connected people are left. This step is optional: you can turn it off by setting `trim=False`.
+
+**7.** _Draw graphic_
+
+Use the [graphviz](https://graphviz.readthedocs.io/en/stable/manual.html) library to create the diagraph representation and save it.
+
+
+### Important Notes
+
+Be aware:
 - Will take awhile as we're scraping each wikipedia page individually. No parallelism yet.
 - There's no guarantee that the program will actually find the interesting relationships.
 - All titles are represented the same way (with the gold arrow). There's usually several different titles represented on the same graph, because titles are nepotistic like that. You'll need to google to work it out.
