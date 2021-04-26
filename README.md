@@ -1,9 +1,9 @@
 # WikipediaRelations
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/HebeHH/WikipediaRelations/main?filepath=WikipediaRelations.ipynb)
+
 Python script for finding quasi-incestuous relationships according to Wikipedia
 
 Basically: choose a person who's available on wikipedia. Then use this program to get a dot diagraph of their family relationships, and where they fall in any lines of succession for a title (eg, royal crown).
-
-
 
 <br>
 
@@ -43,9 +43,13 @@ The graph is a bit messy, as auto generated ones usually are. But zooming in and
 
 ### Running the Code
 
-Clone the repo, or just download the `WikipediaRelations.ipynb` Jupyter notebook. Then you can either run your commands at the bottom, or import it into a new file. 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/HebeHH/WikipediaRelations/main?filepath=WikipediaRelations.ipynb)
 
-> Uses Python3. Dependencies: [graphviz](https://graphviz.readthedocs.io/en/stable/manual.html), [BeautifulSoup](https://pypi.org/project/beautifulsoup4/) and [palettable](https://jiffyclub.github.io/palettable/).
+If you want to skip cloning the repo, you can use the online Binder notebook by clicking on the binder launch button above. Run all cells, then scroll down to the very bottom and see your output. It should look something like this:
+
+![Ptolemy diagram](./documentation_imgs/bindercodeex.png)
+
+
 
 **Basic usage:**
 
