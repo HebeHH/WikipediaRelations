@@ -54,9 +54,11 @@ If you want to skip cloning the repo, you can use the online Binder notebook by 
 **Basic usage:**
 
 ```python
-dot = wiki_relationship_diagraph("Ptolemy XI", "Ptolemy_XI_Alexander_II", count=200)
+dot = wiki_relationship_diagraph("Ptolemy XI", "Ptolemy_XI_Alexander_II")
 ```
-Returns (and saves) the dot graph for the Ptolemies given above. See it in more detail [here](https://raw.githubusercontent.com/HebeHH/WikipediaRelations/main/Ptolemies.png).
+Call the `wiki_relationship_diagraph` function and pass it 1) the name of the starting person, and 2) the last part of their Wikipedia link (eg: `en.wikipedia.org/wiki/Ptolemy_XI_Alexander_II` becomes `Ptolemy_XI_Alexander_II`).
+
+This will create the relationship diagram for that person. For example, the previous command will create the graph given above. See it in more detail [here](https://raw.githubusercontent.com/HebeHH/WikipediaRelations/main/Ptolemies.png).
 
 
 
