@@ -5,6 +5,10 @@ Basically: choose a person who's available on wikipedia. Then use this program t
 
 
 
+<hr>
+
+
+
 ### Example: Relationships of the Ancient Egypt Ptolemies
 
 _Red dashed line is marriage. Gold arrow shows succession of a title. Black arrow is parent/child. Click for bigger image._
@@ -26,6 +30,10 @@ The graph is a bit messy, as auto generated ones usually are. But zooming in and
 ![Ptolemy diagram](./documentation_imgs/CleopatraSelene.png)
 
 
+
+
+
+<hr>
 
 
 
@@ -61,6 +69,12 @@ These paramaters are:
 - `save_format`: Format to save the graph as. `False` means it will use your computer's default value. Otherwise, give a format value as a string from this list of what's available: https://www.graphviz.org/doc/info/output.html
 
 
+
+<hr>
+
+
+
+
 ### How it works
 
 **1.** _Scrape Wikipedia page_
@@ -92,6 +106,12 @@ Remove 'unimportant' people from the graph, ie: people on the fringes without co
 **7.** _Draw graphic_
 
 Use the [graphviz](https://graphviz.readthedocs.io/en/stable/manual.html) library to create the diagraph representation and save it.
+
+
+
+<hr>
+
+
 
 
 ### Important Notes
