@@ -5,8 +5,6 @@ Basically: choose a person who's available on wikipedia. Then use this program t
 
 
 
-[TOC]
-
 ### Example: Relationships of the Ancient Egypt Ptolemies
 
 _Red dashed line is marriage. Gold arrow shows succession of a title. Black arrow is parent/child. Click for bigger image._
@@ -20,7 +18,7 @@ The graph is a bit messy, as auto generated ones usually are. But zooming in and
 - *Ptolemy IX:* her oldest brother.
 - *Ptolemy X:* her other brother.
 - *Antiochus VIII:* her maternal cousin, the widower of her sister Tryphaena.
-- *Antiochus IX:* her maternal cousin, the brother of her late husband, Antiochus VIII, who used to be married to her sister Cleopatra IV.
+- *Antiochus IX:* her maternal cousin, the widower of her sister Cleopatra IV, and the brother of her previous husband Antiochus VIII.
 - *Antiochus X:* her step-son, who also happened to be her nephew.
 
 
@@ -42,11 +40,9 @@ Clone the repo, or just download the `WikipediaRelations.ipynb` Jupyter notebook
 ```python
 dot = wiki_relationship_diagraph("Ptolemy XI", "Ptolemy_XI_Alexander_II", count=200)
 ```
-Returns (and saves) the dot graph below. See it in more detail [here](https://raw.githubusercontent.com/HebeHH/WikipediaRelations/main/Ptolemies.png).
+Returns (and saves) the dot graph for the Ptolemies given above. See it in more detail [here](https://raw.githubusercontent.com/HebeHH/WikipediaRelations/main/Ptolemies.png).
 
 
-
-![Ptolemy diagram](./documentation_imgs/Ptolemies.png)
 
 
 **Full function and with default paramaters:**
