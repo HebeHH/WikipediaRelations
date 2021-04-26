@@ -1,8 +1,35 @@
 # WikipediaRelations
 Python script for finding quasi-incestuous relationships according to Wikipedia
 
-
 Basically: choose a person who's available on wikipedia. Then use this program to get a dot diagraph of their family relationships, and where they fall in any lines of succession for a title (eg, royal crown).
+
+
+
+[TOC]
+
+### Example: Relationships of the Ancient Egypt Ptolemies
+
+_Red dashed line is marriage. Gold arrow shows succession of a title. Black arrow is parent/child. Click for bigger image._
+
+![Ptolemy diagram](./documentation_imgs/Ptolemies.png)
+
+
+
+The graph is a bit messy, as auto generated ones usually are. But zooming in and tracing out the lines yields up a variety of interesting characters and complicated relationships. My favourite is [Cleopatra Selene of Syria](https://en.wikipedia.org/wiki/Cleopatra_Selene_of_Syria). This woman inherited four different titles, largely due to her five marriages:
+
+- *Ptolemy IX:* her oldest brother.
+- *Ptolemy X:* her other brother.
+- *Antiochus VIII:* her maternal cousin, the widower of her sister Tryphaena.
+- *Antiochus IX:* her maternal cousin, the brother of her late husband, Antiochus VIII, who used to be married to her sister Cleopatra IV.
+- *Antiochus X:* her step-son, who also happened to be her nephew.
+
+
+
+![Ptolemy diagram](./documentation_imgs/CleopatraSelene.png)
+
+
+
+
 
 ### Running the Code
 
@@ -11,14 +38,15 @@ Clone the repo, or just download the `WikipediaRelations.ipynb` Jupyter notebook
 > Uses Python3. Dependencies: [graphviz](https://graphviz.readthedocs.io/en/stable/manual.html), [BeautifulSoup](https://pypi.org/project/beautifulsoup4/) and [palettable](https://jiffyclub.github.io/palettable/).
 
 **Basic usage:**
+
 ```python
 dot = wiki_relationship_diagraph("Ptolemy XI", "Ptolemy_XI_Alexander_II", count=200)
 ```
 Returns (and saves) the dot graph below. See it in more detail [here](https://raw.githubusercontent.com/HebeHH/WikipediaRelations/main/Ptolemies.png).
 
-_Red dashed line is marriage. Gold arrow shows succession of a title. Black arrow is parent/child._
 
-![Ptolemy diagram](https://raw.githubusercontent.com/HebeHH/WikipediaRelations/main/Ptolemies.png)
+
+![Ptolemy diagram](./documentation_imgs/Ptolemies.png)
 
 
 **Full function and with default paramaters:**
