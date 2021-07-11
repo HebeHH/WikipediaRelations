@@ -1,3 +1,4 @@
 graphviz
 bs4
 palettable
+tqdm
