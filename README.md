@@ -5,7 +5,6 @@ Jupyter Notebook for finding quasi-incestuous relationships according to Wikiped
 
 Basically: choose a person who's available on wikipedia. Then use this program to get a dot diagraph of their family relationships, and where they fall in any lines of succession for a title (eg, royal crown).
 
-[TOC]
 
 
 
