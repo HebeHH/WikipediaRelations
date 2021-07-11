@@ -56,7 +56,7 @@ If you want to skip cloning the repo, you can use the online Binder notebook by 
 ```python
 dot = wiki_relationship_diagraph("Ptolemy XI", "Ptolemy_XI_Alexander_II")
 ```
-Call the `wiki_relationship_diagraph` function and pass it 1) the name of the starting person, and 2) the last part of their Wikipedia link (eg: `en.wikipedia.org/wiki/Ptolemy_XI_Alexander_II` becomes `Ptolemy_XI_Alexander_II`).
+Call the `wiki_relationship_diagraph` function and pass it 1) the name of the starting person, and 2) their Wikipedia link.
 
 This will create the relationship diagram for that person. For example, the previous command will create the graph given above. See it in more detail [here](https://raw.githubusercontent.com/HebeHH/WikipediaRelations/main/Ptolemies.png).
 
@@ -65,15 +65,17 @@ This will create the relationship diagram for that person. For example, the prev
 
 **Full function and with default paramaters:**
 ```python
-wiki_relationship_diagraph(basis_person_name, basis_person_link, count=150,
-                               name="WikiRelations", trim=True, save=True, save_format=False)
+wiki_relationship_diagraph(name, link, count=150,
+                           title="WikiRelations", 
+                           trim=True, save=True, 
+                           save_format=False)
 ```
 
 These paramaters are:
-- `basis_person_name`: Display name of starter person
-- `basis_person_link`: The last part of the wikipedia link for that person (eg: the link `https://en.wikipedia.org/wiki/Demetrius_I_of_Bactria` becomes `Demetrius_I_of_Bactria`.
+- `name`: Display name of starter person
+- `link`: The Wikipedia link for that person (or at least the last step in the url path)
 - `count`: How many related people to try and pull
-- `name`: Name to save the dot graph as
+- `title`: Name to save the dot graph as
 - `trim`: Recursively remove all 'dead ends' that don't go much of anywhere (I was interested in finding cyclic connections)
 - `save`: Whether to save the graph to disk or not.
 - `save_format`: Format to save the graph as. `False` means it will use your computer's default value. Otherwise, give a format value as a string from this list of what's available: https://www.graphviz.org/doc/info/output.html
